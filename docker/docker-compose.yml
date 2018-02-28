@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   memcached:
     image: memcached:1.4
@@ -17,10 +17,9 @@ services:
       MYSQL_PASSWORD: mysql_pw
     ports:
       - "13306:3306"
-    volumes_from:
-      - data
     volumes:
       - ../application/initial.sql:/docker-entrypoint-initdb.d/initial.sql
+      - ./misc/data:/var/lib/mysql
     container_name: mysql
 
   nginx:
