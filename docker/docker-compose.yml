@@ -45,3 +45,4 @@ services:
       DATABASE_USER: 'mysql_user'
       DATABASE_PASSWORD: ''
     container_name: web
+    working_dir: '/var/www/html/public'
